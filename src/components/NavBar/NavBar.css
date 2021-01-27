@@ -1,0 +1,38 @@
+.navBar-container{
+    background-color: #292727;
+    padding: 10px 0;    
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navLogo{
+    max-width: 130px;
+    outline: none;
+}
+
+.navLogo img{
+    width: 100%;
+}
+
+.navList{
+    display: flex;
+    align-items: center;
+}
+
+.navList li{
+    margin-right: 15px;
+}
+
+.navLink{
+    color: white;
+    text-decoration: none;
+    padding: 10px 5px;    
+}
+
+.navLink:hover{
+    color: #d2d4da;
+}
