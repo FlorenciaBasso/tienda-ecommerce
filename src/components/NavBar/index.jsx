@@ -1,4 +1,4 @@
-import './NavBar.css';
+import './NavBar.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = () => {

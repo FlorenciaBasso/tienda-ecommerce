@@ -12,27 +12,26 @@
 .navLogo{
     max-width: 130px;
     outline: none;
-}
-
-.navLogo img{
-    width: 100%;
+    img{
+        width: 100%;
+    }
 }
 
 .navList{
     display: flex;
     align-items: center;
+    li{
+        margin-right: 15px;
+    }
 }
 
-.navList li{
-    margin-right: 15px;
-}
 
 .navLink{
     color: white;
     text-decoration: none;
     padding: 10px 5px;    
-}
-
-.navLink:hover{
-    color: #d2d4da;
+    &:hover{
+        color: #d2d4da;
+        text-decoration: none;
+    }
 }
