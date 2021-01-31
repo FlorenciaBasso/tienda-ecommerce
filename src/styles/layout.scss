@@ -1,0 +1,22 @@
+@import "./styles/variables.scss";
+@import "./styles/reset.scss";
+
+.btn{
+    padding: 5px;
+    outline: none;
+    &.btn-sm{
+        padding: 5px 12px 8px;
+    }
+    &.btn-md{
+        padding: 8px 20px 12px;
+    }
+    &.btn-primary{
+        color: $white;
+        background-color: $blue;
+        border: $blue;
+    }
+    &:focus{
+        border: transparent;
+        outline: none;
+    }
+}
