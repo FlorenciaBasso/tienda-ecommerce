@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+@import "../../styles/reset.scss";
+
+.counter-box{
+    display: flex;
+    align-items: flex-end;
+    .icon-count{
+        display: flex;
+        color: $blue;
+        cursor: pointer;
+        &:first-child{
+            margin-right: 8px;
+        }
+        &:last-child{
+            margin-left: 8px;
+        }
+    }
+    .num-count{
+        font-size: 20px;
+        font-weight: 600;
+        // transition: 1s;
+    }
+}
