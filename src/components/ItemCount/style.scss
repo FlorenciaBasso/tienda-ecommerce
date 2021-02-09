@@ -14,6 +14,10 @@
         &:last-child{
             margin-left: 8px;
         }
+        &.disabled{
+            color: #b6aeae;
+            cursor: not-allowed;
+        }
     }
     .num-count{
         font-size: 20px;

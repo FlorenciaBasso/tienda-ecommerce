@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import ItemCount from '../ItemCount';
 
-const Card = ({product, price, vendedor, stock, children}) => {
+const Item = ({product, price, vendedor, stock, children}) => {
 
 	const [contador, setContador] = useState(1)
 	//valor, y funcion que setea el valor
@@ -35,10 +35,8 @@ const Card = ({product, price, vendedor, stock, children}) => {
 				{children}
 			</div>
 		</div>
-
-		
     </>
   );
 }
 
-export default Card;
+export default Item;

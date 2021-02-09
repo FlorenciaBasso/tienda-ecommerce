@@ -14,7 +14,10 @@ const ItemCount = ({stock, contador, onAdd, onRest}) => {
                 <div className="icon-count" onClick={() => { onAdd(stock) }}>
                     <CardWidget className="cardIcon" icon={'add_circle_outline'}/>
                 </div>
-                : null
+                :
+                <div className="icon-count disabled">
+                    <CardWidget className="cardIcon" icon={'add_circle_outline'}/>
+                </div>
             }
         </div>
         </>
