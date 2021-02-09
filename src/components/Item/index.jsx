@@ -1,10 +1,9 @@
 import './style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import React, { useState } from 'react';
 import ItemCount from '../ItemCount';
 
-const Item = ({product, price, vendedor, stock, children}) => {
+const Item = ({product, children}) => {
 
 	const [contador, setContador] = useState(1)
 	//valor, y funcion que setea el valor
@@ -24,12 +23,12 @@ const Item = ({product, price, vendedor, stock, children}) => {
     <>
 		<div className="card">
 			<div className="cardHeader">				
-				<ItemCount stock={stock} contador={contador} onAdd={onAdd} onRest={onRest}/>
+				<ItemCount stock={product.stock} contador={contador} onAdd={onAdd} onRest={onRest}/>
 			</div>
 			<ul>
-				<li className="cardItem">Producto: <span>{product}</span></li>
-				<li className="cardItem">Precio: <span>${price}</span></li>
-				<li className="cardItem">Vendedor: <span>{vendedor}</span></li>
+				<li className="cardItem">Producto: <span>{product.product}</span></li>
+				<li className="cardItem">Precio: <span>${product.price}</span></li>
+				<li className="cardItem">Vendedor: <span>{product.vendedor}</span></li>
 			</ul>
 			<div className="cardFooter">				
 				{children}

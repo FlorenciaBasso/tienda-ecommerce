@@ -1,31 +1,28 @@
 import './style.scss';
-// import React, {useEffect, useState} from 'react';
 import Item from '../../components/Item';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
-const ItemList = () => {
-  // const [carrito, setCarrito] = useState([]);
-
-  const array = [
-    {id: 1, product: "Zapatilla", price: "4000", vendedor: "Cristian", stock: "7", name: "Zapatilla"},
-    {id: 2, product: "Remera", price: "3000", vendedor: "Marcelo", stock: "8", name: "Remera"},
-    {id: 3, product: "Camisa", price: "10000", vendedor: "Mariela", stock: "5", name: "Camisa"},
-    {id: 4, product: "Gorra", price: "3000", vendedor: "Marcelo", stock: "8", name: "Gorra"},
-    {id: 5, product: "Ojotas", price: "2000", vendedor: "Mercedes", stock: "3", name: "Ojotas"},
-  ];
-	return(
-	<>
-    {array.map((element, index) => {
-      return (
-        <Item key={index}>
-          {element}
-          {/* <button className="btn btn-sm btn-primary" onClick={() => {
-            setCarrito([...carrito, {name: '{name}'}])
-          }}>Comprar</button> */}
-        </Item>
-      )
-    })}
-	</>
-  )
+const ItemList = ({products}) => {
+  return (
+    <>
+    <Container maxWidth="lg">
+     <Grid container spacing={6}>
+        {products.map((product) => {
+          return(
+            <>     
+              <Grid item xs={12} sm={6} md={4}>
+                <Item key={product.id} product={product}>
+                  <button className="btn btn-sm btn-primary">Comprar</button>
+                </Item>
+              </Grid>
+            </>
+          )
+        })}
+      </Grid>
+    </Container>
+    </>
+  );
 
 }
 
