@@ -2,21 +2,21 @@ import './style.scss';
 import * as React from "react";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import ItemList from '../../components/ItemList';
-import productList from '../../mocks/productList';
+import ItemDetail from '../../components/ItemDetail';
+import product1 from '../../mocks/product1';
 
-const ItemListContainer = ({ greeting }) => {
-	const [listaproductos, setProducts] = React.useState([]);
+const ItemDetailContainer = ({ titleProduct }) => {
+	const [details, setDetails] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(false);
   
 	React.useEffect(() => {
 	  setIsLoading(true);
-	  const myPromise = new Promise((resolve, reject) => {
-		setTimeout(() => resolve(productList), 2000);
+	  const getItems = new Promise((resolve, reject) => {
+		setTimeout(() => resolve(product1), 2000);
 	  });
   
-	  myPromise.then((result) => {
-		setProducts(result);
+	  getItems.then((result) => {
+		setDetails(result);
 		setIsLoading(false);
 	  });
 	}, []);
@@ -25,7 +25,7 @@ const ItemListContainer = ({ greeting }) => {
 	  return(
 		<Container maxWidth="lg">
 			<Grid item xs={12}>
-				<h2 className="title">Cargando productos..</h2>
+				<h2 className="title">Cargando item..</h2>
 			</Grid>
     	</Container>
 	  )
@@ -35,11 +35,11 @@ const ItemListContainer = ({ greeting }) => {
 	  <>
 		<Container maxWidth="lg">
 			<Grid item xs={12}>
-				<h2 className="title">{greeting}</h2>
+				<h2 className="title">{titleProduct}</h2>
 			</Grid>
     	</Container>
-		<ItemList products={listaproductos} />
+		<ItemDetail details={details} />
 	  </>
 	);
   };
-export default ItemListContainer;
+export default ItemDetailContainer;
