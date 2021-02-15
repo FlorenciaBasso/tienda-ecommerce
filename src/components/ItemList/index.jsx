@@ -2,6 +2,7 @@ import './style.scss';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Item from '../../components/Item';
+import { Link } from 'react-router-dom';
 
 const ItemList = ({products}) => {
   return (
@@ -13,7 +14,7 @@ const ItemList = ({products}) => {
             <>     
               <Grid item xs={12} sm={6} md={4}>
                 <Item key={product.id} product={product}>
-                  <button className="btn btn-sm btn-primary btn-buy">Comprar</button>
+                  <Link className="btn btn-sm btn-primary btn-buy" to={`/item/${product.name}`}>Comprar</Link>
                 </Item>
               </Grid>
             </>

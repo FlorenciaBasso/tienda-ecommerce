@@ -2,6 +2,7 @@ import './style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import ItemCount from '../ItemCount';
+import { Link } from 'react-router-dom';
 
 const Item = ({product, children}) => {
 
@@ -21,6 +22,7 @@ const Item = ({product, children}) => {
 
   return (
     <>
+		{/* <Link className="card" to={`/item/${product.name}`}> */}
 		<div className="card">
 			<div className="cardHeader">				
 				<ItemCount stock={product.stock} contador={contador} onAdd={onAdd} onRest={onRest}/>

@@ -42,6 +42,10 @@
         color: #d2d4da;
         text-decoration: none;
     }
+    &.active{
+        color: #0fe0ff;
+        font-weight: 600;
+    }
 }
 .btn-sesion{
     margin-left: 15px;

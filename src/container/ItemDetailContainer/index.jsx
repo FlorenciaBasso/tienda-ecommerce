@@ -6,6 +6,7 @@ import ItemDetail from '../../components/ItemDetail';
 import product1 from '../../mocks/product1';
 
 const ItemDetailContainer = ({ titleProduct }) => {
+
 	const [details, setDetails] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(false);
   
