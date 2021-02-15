@@ -1,17 +1,14 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import productList from '../../mocks/productList';
 
 const CategoryListContainer = () => {
     const { categoriaID } = useParams();
-    const arrayProductos = [
-        { id: 1, name: "toto", price: 2929, idCategoria: 4 },
-        { id: 2, name: "toto2", price: 2929, idCategoria: 4 },
-        { id: 3, name: "toto3", price: 2929, idCategoria: 5 }
-    ];
+    const arrayProductos = [productList];
     useEffect(() => {
         
         let productosAMostrar = arrayProductos.map(producto => {
-            if(producto.idCategoria.toString() === categoriaID){
+            if(producto.idCategoria=== categoriaID){
                 return producto
             }else{
                 return null;

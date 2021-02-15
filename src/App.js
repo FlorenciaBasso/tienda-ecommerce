@@ -31,13 +31,13 @@ const App = () => {
                     </li>
                     <li>
                       {/* <NavLink className="navLink" activeclassname="active" to={`/category/${category.name}`}> */}
-                      <NavLink className="navLink" activeclassname="active" to={`/category/5`}>
+                      <NavLink className="navLink" activeclassname="active" to={`/categoria/5`}>
                         <CardWidget icon={'local_offer'}/>
                         <span className="navItem">Categorias</span>
                       </NavLink>
                     </li>
                     <li>
-                      <Link className="navLink" activeclassname="active" to={`/category/4`}>
+                      <Link className="navLink" activeclassname="active" to={`/categoria/4`}>
                         <CardWidget icon={'shopping_cart'}/>
                         <span className="navItem">Mis compras</span>
                       </Link>
