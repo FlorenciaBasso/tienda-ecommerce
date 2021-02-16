@@ -60,7 +60,7 @@ const NavBar = () => {
                     <NavLink
                       className="navLink"
                       activeClassName="active"
-                      to={`/contacto`}
+                      to={`/cart`}
                     >
                       <CardWidget icon={"shopping_cart"} />
                       <span className="navItem">Mis compras</span>

@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/item/:id">
           <ItemDetailContainer titleProduct={'Detalle de producto:'}/>
         </Route>        
-        <Route path="/contacto">
+        <Route path="/cart">
           {/* <Form></Form> */}
         </Route>   
       </Switch>

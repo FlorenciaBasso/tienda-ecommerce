@@ -12,7 +12,7 @@ const ItemDetail = ({details}) => {
           return(
             <Grid item xs={12} key={item.id} >
               <Card item={item}>
-                <Link className="btn btn-sm btn-primary" to={`/checkout/${item.id}`}>Comprar</Link>
+                <Link className="btn btn-sm btn-primary" to={`/cart/${item.id}`}>Comprar</Link>
               </Card>
             </Grid>
           )
