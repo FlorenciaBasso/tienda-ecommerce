@@ -11,13 +11,11 @@ const ItemList = ({products}) => {
      <Grid container spacing={6}>
         {products.map((product) => {
           return(
-            <>     
-              <Grid item xs={12} sm={6} md={4}>
-                <Item key={product.id} product={product}>
-                  <Link className="btn btn-sm btn-primary btn-buy" to={`/item/${product.name}`}>Comprar</Link>
-                </Item>
-              </Grid>
-            </>
+            <Grid item xs={12} sm={6} md={4} key={product.id}>
+              <Item product={product}>
+                <Link className="btn btn-sm btn-primary btn-buy" to={`/item/${product.id}`}>Comprar</Link>
+              </Item>
+            </Grid>
           )
         })}
       </Grid>

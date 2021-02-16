@@ -10,13 +10,11 @@ const ItemDetail = ({details}) => {
     <Container maxWidth="lg">
         {details.map((item) => {
           return(
-            <>     
-              <Grid item xs={12}>
-                <Card key={item.id} item={item}>
-                  <Link className="btn btn-sm btn-primary" to={`/checkout/${item.name}`}>Comprar</Link>
-                </Card>
-              </Grid>
-            </>
+            <Grid item xs={12} key={item.id} >
+              <Card item={item}>
+                <Link className="btn btn-sm btn-primary" to={`/checkout/${item.id}`}>Comprar</Link>
+              </Card>
+            </Grid>
           )
         })}
     </Container>

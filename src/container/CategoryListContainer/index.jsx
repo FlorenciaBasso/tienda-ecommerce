@@ -1,24 +1,48 @@
-import { useEffect } from "react";
+import { Container, Grid } from "@material-ui/core";
+import * as React from "react";
 import { useParams } from "react-router-dom";
-import productList from '../../mocks/productList';
+import ItemList from "../../components/ItemList";
+import productList from "../../mocks/productList";
 
 const CategoryListContainer = () => {
-    const { categoriaID } = useParams();
-    const arrayProductos = [productList];
-    useEffect(() => {
-        
-        let productosAMostrar = arrayProductos.map(producto => {
-            if(producto.idCategoria=== categoriaID){
-                return producto
-            }else{
-                return null;
-            }
-        })
-        console.log(productosAMostrar)
-        return () => {
+  const [products, setProducts] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
 
-        }
-    }, [categoriaID]);
-    return <h1>Estas en la categoria: {categoriaID}</h1>;
-}
+  const { categoriaID } = useParams();
+
+  React.useEffect(() => {
+    setIsLoading(true);
+    const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve(productList), 2000);
+    });
+
+    myPromise.then((result) => {
+      let filterProducts = result.filter(
+        (product) => product.idCategoria === Number(categoriaID)
+      );
+      setProducts(filterProducts);
+      setIsLoading(false);
+    });
+  }, [categoriaID]);
+
+  if (isLoading) {
+    return (
+      <Container maxWidth="lg">
+        <Grid item xs={12}>
+          <h2 className="title">Cargando productos..</h2>
+        </Grid>
+      </Container>
+    );
+  }
+  return (
+    <>
+      <Container maxWidth="lg">
+        <Grid item xs={12}>
+            <h2 className="title">Categoria</h2>
+            <ItemList products={products} />
+        </Grid>
+      </Container>
+    </>
+  );
+};
 export default CategoryListContainer;

@@ -38,7 +38,7 @@ const ItemListContainer = ({ greeting }) => {
 				<h2 className="title">{greeting}</h2>
 			</Grid>
     	</Container>
-		<ItemList products={listaproductos} />
+		<ItemList products={listaproductos} className="product-container"/>
 	  </>
 	);
   };
