@@ -1,28 +1,22 @@
-import './style.scss';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Card from '../Card';
-import { Link } from 'react-router-dom';
+import "./style.scss";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Card from "../Card";
 
-const ItemDetail = ({details}) => {
+const ItemDetail = ({ details }) => {
   return (
     <>
-    <Container maxWidth="lg">
+      <Container maxWidth="lg">
         {details.map((item) => {
-          return(
-            <Grid item xs={12} key={item.id} >
-              <Card item={item}>
-                <Link className="btn btn-sm btn-primary" to={`/cart/${item.id}`}>Comprar</Link>
-              </Card>
+          return (
+            <Grid item xs={12} key={item.id}>
+              <Card item={item}></Card>
             </Grid>
-          )
+          );
         })}
-    </Container>
+      </Container>
     </>
   );
-
-}
+};
 
 export default ItemDetail;
-
-
