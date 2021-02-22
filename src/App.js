@@ -4,11 +4,13 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './container/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import CategoryListContainer from './container/CategoryListContainer';
+// import GlobalContext from './context/GlobalContext';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 const App = () => {
   return (
     <>
+    {/* <GlobalContext.Provider> */}
       <BrowserRouter>  
       <NavBar></NavBar>      
       <Switch>
@@ -26,6 +28,7 @@ const App = () => {
         </Route>   
       </Switch>
       </BrowserRouter>
+    {/* </GlobalContext.Provider> */}
     </>
   );
 }

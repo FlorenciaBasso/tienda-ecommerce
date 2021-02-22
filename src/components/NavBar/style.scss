@@ -50,3 +50,21 @@
 .btn-sesion{
     margin-left: 15px;
 }
+
+
+.dropdown-menu{
+    background-color: $black;
+
+    .dropdown-item{
+        color: $white;
+        padding: 5px;
+        &:hover{
+            background-color: $blue;
+        }
+    }
+
+    .navItem{
+        margin: 0;
+        margin-left: 10px;
+    }
+}

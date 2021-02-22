@@ -3,36 +3,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import ItemCount from "../ItemCount";
-import { Link } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
-const Card = ({ item}) => {
-	// onAdd(stock) {
-	// // Hemos recibido un evento del ItemCount
-	// }
+const Card = ({ item }) => {
+  const [showButton, setShowButton] = useState(false);
+  const [cart, setCart] = useState([]);
 
-	// const [valorCount, setValorCount] = useState(1);
-	
-	
-	const [contador, setContador] = useState(1);
-  //valor, y funcion que setea el valor
-	const mostrarEvento = (e) => {
-		setContador(e.target.value);
-	  console.log(e.target.value);
-	};
+  const onAdd = (contador) => {
+    console.log(`Se agregaron ${contador} productos al carrito`);
+    setShowButton(true);
 
-  const onAdd = (stock, contador) => {
-    if (contador < stock) {
-      setContador(contador + 1);
-    }
+    const order = { item: item, quantity: contador };
+    setCart([...cart, order]);
   };
-  const onRest = (contador) => {
-    if (contador > 0) {
-      setContador(contador - 1);
-    }
-  };
-
-
-
 
   return (
     <>
@@ -56,18 +40,12 @@ const Card = ({ item}) => {
               <p className="card-mediosPago">{item.mediosPago}</p>
               <h4 className="title-description">Vendedor:</h4>
               <p className="card-vendedor">{item.vendedor}</p>
-              <ItemCount setInitial={setContador}
-                stock={item.stock}
-                contador={contador}
-                onAdd={onAdd}
-                onRest={onRest}
-              >
-				{/* {isBotonAdd ? 
-				<Link className="btn btn-sm btn-primary" to={`/cart/${item.id}`}>Agregar al carrito</Link> :
-				<Link className="btn btn-sm btn-primary" to={`/cart/${item.id}`}>Terminar mi compra</Link>
-				} */}
-                
-              </ItemCount>
+
+              <ItemCount stock={item.stock} onAdd={onAdd} />
+
+              {showButton && (
+                <Link className="btn btn-sm btn-primary btn-block" to={`/cart`}>Ir al carrito</Link>
+              )}
             </div>
           </div>
         </div>

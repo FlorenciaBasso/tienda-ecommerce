@@ -1,9 +1,7 @@
 import "./style.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
 import CardWidget from "../CardWidget";
 import { Link, NavLink } from "react-router-dom";
 import categoryList from "../../mocks/categoryList";
-import { Dropdown, DropdownButton } from "bootstrap";
 
 const NavBar = () => {
   return (
@@ -39,22 +37,36 @@ const NavBar = () => {
                       <span className="navItem">Productos</span>
                     </NavLink>
                   </li>
-                  {categoryList.map((categoria) => {
-                    return (
-                      <>
-                        <li key={categoria.id}>
+                  <li className="dropdown">
+                    <button
+                      className="btn btn-primary btn-sm dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Categorías
+                    </button>
+                    <div
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      {categoryList.map((categoria) => {
+                        return (
                           <NavLink
-                            className="navLink"
+                            key={categoria.id}
+                            className="dropdown-item"
                             activeClassName="active"
                             to={`/categoria/${categoria.id}`}
                           >
-                            <CardWidget icon={"local_offer"} />
                             <span className="navItem">{categoria.nombre}</span>
                           </NavLink>
-                        </li>
-                      </>
-                    );
-                  })}
+                        );
+                      })}
+                    </div>
+                  </li>
+                  {/*  */}
 
                   <li>
                     <NavLink
@@ -71,12 +83,6 @@ const NavBar = () => {
                       Iniciar sesión
                     </button>
                   </li>
-                  
-                  {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                  </DropdownButton> */}
                 </ul>
               </div>
             </div>
