@@ -5,10 +5,15 @@ import Grid from "@material-ui/core/Grid";
 import ItemDetail from "../../components/ItemDetail";
 import productsDetail from "../../mocks/productsDetail";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetailContainer = ({ titleProduct }) => {
   const [details, setDetails] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+
+  const {cart, setCart} = useContext(CartContext);
+	console.log(cart);
 
   const {id} =  useParams();
 

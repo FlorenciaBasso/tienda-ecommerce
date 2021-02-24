@@ -2,7 +2,6 @@ import "./style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import CardWidget from "../CardWidget";
-import { Button } from "@material-ui/core";
 
 const ItemCount = ({ stock, onAdd }) => {
   const [contador, setContador] = useState(1);

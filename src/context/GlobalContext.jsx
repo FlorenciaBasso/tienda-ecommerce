@@ -1,6 +1,15 @@
-import {createContext} from 'react';
+import {createContext, useState } from 'react';
 
-//creamos el espacio de memoria
-const GlobalContext = createContext();
+export const GlobalContext = createContext();
 
-export default GlobalContext;
+const GlobalProvider = ({children}) => {
+    const [user, setUser] = useState([{name: 'Fabi', age: 44, country: 'Arg'}]);
+
+    console.log(user);
+
+    return <GlobalContext.Provider value={{user, setUser}}>
+        {children}
+    </GlobalContext.Provider>
+}
+
+export default GlobalProvider;

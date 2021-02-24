@@ -1,21 +1,23 @@
 import "./style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Grid from "@material-ui/core/Grid";
 import ItemCount from "../ItemCount";
-import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const Card = ({ item }) => {
   const [showButton, setShowButton] = useState(false);
-  const [cart, setCart] = useState([]);
 
+  const {cart, setCart} = useContext(CartContext);
+  
   const onAdd = (contador) => {
-    console.log(`Se agregaron ${contador} productos al carrito`);
+    console.log(`Se agregaron ${contador} ${item.title} al carrito`);
     setShowButton(true);
-
+    
     const order = { item: item, quantity: contador };
-    setCart([...cart, order]);
+    setCart([...cart, order])
+    console.log(cart);
   };
 
   return (
