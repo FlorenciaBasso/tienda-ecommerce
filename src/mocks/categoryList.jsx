@@ -1,10 +1,10 @@
 const categoryList = [
   {
-    nombre: "zapatillas",
+    nombre: "Zapatillas",
     id: 1,
   },
   {
-    nombre: "remeras",
+    nombre: "Remeras",
     id: 2,
   },
   {

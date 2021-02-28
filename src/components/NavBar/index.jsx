@@ -1,5 +1,6 @@
 import "./style.scss";
 import CardWidget from "../CardWidget";
+import CartWidget from "../CartWidget";
 import { Link, NavLink } from "react-router-dom";
 import categoryList from "../../mocks/categoryList";
 
@@ -74,7 +75,7 @@ const NavBar = () => {
                       activeClassName="active"
                       to={`/cart`}
                     >
-                      <CardWidget icon={"shopping_cart"} />
+                      <CartWidget/>                     
                       <span className="navItem">Mis compras</span>
                     </NavLink>
                   </li>

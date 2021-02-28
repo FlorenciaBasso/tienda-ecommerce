@@ -12,7 +12,7 @@ const ItemDetailContainer = ({ titleProduct }) => {
   const [details, setDetails] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const {cart, setCart} = useContext(CartContext);
+  const {cart} = useContext(CartContext);
 	console.log(cart);
 
   const {id} =  useParams();

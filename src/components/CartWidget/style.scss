@@ -1,0 +1,27 @@
+@import "../../styles/reset.scss";
+@import "../../styles/variables.scss";
+
+.box-shop{
+    position: relative;
+}
+
+.icon-shop{
+    display: block;
+}
+
+.icon-number{
+    background-color: #e80505;
+    color: #fff;
+    font-weight: 600;
+    position: absolute;
+    top: -7px;
+    right: -9px;
+    padding: 9px;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}

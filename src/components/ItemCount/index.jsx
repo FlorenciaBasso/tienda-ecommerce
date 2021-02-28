@@ -1,9 +1,9 @@
 import "./style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, memo } from "react";
+import React, { useState } from "react";
 import CardWidget from "../CardWidget";
 
-const ItemCount = memo(({ stock, onAdd }) => {
+const ItemCount = ({ stock, onAdd }) => {
   const [contador, setContador] = useState(1);
 
   const increment = (contador) => {
@@ -39,9 +39,6 @@ const ItemCount = memo(({ stock, onAdd }) => {
       </div>
     </>
   );
-}, (oldProp, nextProp) => {
-  console.log("vieja prop "+ oldProp);
-  console.log("nueva prop "+ nextProp);
-})
+};
 
 export default ItemCount;
