@@ -12,21 +12,19 @@ const Card = ({ item }) => {
   const {cart, setCart} = useContext(CartContext);
   
   const onAdd = (contador) => {
-    // console.log(`Se agregaron ${contador} ${item.title} al carrito`);
+    console.log(`Se agregaron ${contador} ${item.title} al carrito`);
     setShowButton(true);
-
-    let order = { item: item, quantity: contador };
-
-    const found = cart.find(elem => elem.item.id === item.id);
-    if(!found){
-      setCart([...cart, order]);
-      console.log(cart);
-    }else{
-      // setCart([...cart, order.quantity]);
-      console.log(order.quantity)
-    }
-
     
+    
+    const order = { item: item, quantity: contador };
+    const found = cart.find((element) => element.item.id === item.id);
+    
+    if (found) {
+      found.quantity = contador;
+      setCart([...cart]);
+    } else {
+      setCart([...cart, order])
+    }      
   };
 
   return (

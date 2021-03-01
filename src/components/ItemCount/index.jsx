@@ -12,7 +12,7 @@ const ItemCount = ({ stock, onAdd }) => {
     }
   };
   const decrement = (contador) => {
-    if (contador > 0) {
+    if (contador > 1) {
       setContador(contador - 1);
     }
   };
